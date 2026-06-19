@@ -98,6 +98,22 @@ npm run deploy:global  # deploy commands globally
 
 ---
 
+### Episode 7 — Modal Forms
+
+**Files added:** `src/commands/utility/apply.js`  
+**Files changed:** `src/events/interactionCreate.js`
+
+- `/apply` — opens a `ModalBuilder` staff application form with two inputs:
+  - `name_input` — short text, required, placeholder "e.g. John Doe"
+  - `app_reason` — paragraph text, required, 10–500 chars
+- `interactionCreate.js` updated to handle `isModalSubmit()`:
+  - Reads `name_input` + `app_reason` field values
+  - Replies ephemerally with submitted data confirmation
+  - Logs submission to console
+  - Returns early so slash command routing is unaffected
+
+---
+
 ## Setup
 
 ```bash
