@@ -86,6 +86,18 @@ npm run deploy:global  # deploy commands globally
 
 ---
 
+### Episode 6 — Select Menu Interactions
+
+**Files added:** `src/commands/utility/menu.js`
+
+- `/color` — sends a `StringSelectMenu` with 3 color options (Red, Blue, Yellow) and 30s collector:
+  - Each selection updates the message with a confirmation reply and removes the menu
+  - Guards against other users selecting (ephemeral rejection)
+  - Menu disabled automatically when collector expires
+- Demonstrates `StringSelectMenuBuilder`, `StringSelectMenuOptionBuilder`, and `ActionRowBuilder` patterns
+
+---
+
 ## Setup
 
 ```bash
