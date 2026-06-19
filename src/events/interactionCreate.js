@@ -22,9 +22,16 @@ module.exports = {
         }catch(error){
             console.error(`[InteractionCreate] ❌  Error executing command: ${interaction.commandName}`);
 
-            await interaction.reply({
+            const payload = {
                 content: '⚠️ There was an error while executing this command!',
-            })
+                ephemeral: true,
+            };
+
+            if (interaction.replied || interaction.deferred) {
+                await interaction.followUp(payload);
+            } else if (interaction.isRepliable()) {
+                await interaction.reply(payload);
+            }
         }
     }
 }
