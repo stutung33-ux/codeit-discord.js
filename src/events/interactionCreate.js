@@ -50,7 +50,7 @@ module.exports = {
         try{
             await command.execute(interaction);
         }catch(error){
-            console.error(`[InteractionCreate] ❌  Error executing command: ${interaction.commandName}`);
+            console.error(`[InteractionCreate] ❌  Error executing command: ${interaction.commandName}\n\n${error}`);
 
             const payload = {
                 content: '⚠️ There was an error while executing this command!',
