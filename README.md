@@ -144,6 +144,19 @@ npm run deploy:global  # deploy commands globally
 
 ---
 
+### Episode 10 — Media Gallery & File Components
+
+**Files added:** `src/commands/utility/showcase.js`, `src/example.json`
+
+- `/showcase` — renders a Components V2 layout with media gallery + file attachment:
+  - `MediaGalleryBuilder` with 3 images via `MediaGalleryItemBuilder`
+  - `AttachmentBuilder` loads `example.json` from disk, named `example.json`
+  - `FileBuilder` references the attachment via `attachment://example.json`
+  - Both wrapped in `ContainerBuilder`, sent with `MessageFlags.IsComponentsV2`
+- `src/example.json` — sample JSON file used as the file component attachment
+
+---
+
 ## Setup
 
 ```bash
